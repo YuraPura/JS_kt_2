@@ -20,10 +20,14 @@ function remove(word) {
 }
 
 let userChar = prompt("Введите строку: ");
-
-if (userChar !== null) {
-  let resultStr = remove(userChar);
-  alert("Результат: " + resultStr);
-}
+alert("Результат: " + remove(userChar));
 
 // Тесты
+function tests() {
+  console.assert(remove('Арнольд') === 'рнльд', 'Test 1 Failed: Арнольд -> рнльд');
+  console.assert(remove('АааООО') === '', 'Test 2 Failed: АааООО -> ""');
+  console.assert(remove('Программирование') === 'Пргрммирвние', 'Test 3 Failed: Программирование -> Пргрммирвние');
+  console.assert(remove('Окошка') === 'кшк', 'Test 4 Failed: Окошка -> кшк');
+}
+
+tests()
